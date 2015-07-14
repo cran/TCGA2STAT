@@ -1,0 +1,10 @@
+f9f4608f527d62528ee734242c1d3d87 *DESCRIPTION
+4229880a231b6536c838aa3e1195e382 *NAMESPACE
+cb0e6bb85ade9eae20a04fda344921b3 *R/TCGA2STAT.R
+d73c9f41b3e6f198cb0df641aafaf4cf *data/geneinfo.rda
+a54210cd3e658a6734d2dd8f92b6c395 *man/GeneMerge.Rd
+ade9ed4bb76a32950947dd8027b8568d *man/SampleSplit.Rd
+6b3a245b1afb57308ac90698738b6557 *man/TCGA2STAT-package.Rd
+950c3c5ab859338bb82c9c9efa055913 *man/TumorNormalMatch.Rd
+3b22e38eb869df0120192c0e9359fd29 *man/geneinfo.Rd
+c45cf58065aa9bf09adcc6ee78a367a2 *man/getTCGA.Rd
