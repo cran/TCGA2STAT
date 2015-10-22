@@ -18,13 +18,11 @@ SampleSplit(dat)
 	\item{primary.tumor}{a matrix of tumor samples of dimension \emph{gene} x \emph{sample}.}
 	\item{recurrent.tumor}{a matrix of recurrent tumor samples of dimension \emph{gene} x \emph{sample}.}
 	\item{normal}{a matrix from normal samples of dimension \emph{gene} x \emph{sample}.}
-	
-	Note: For methylation data, each row is a probe for CpG island, and the first three columns are the gene symbol, chromosome, and genome coordinate.
 }
 \examples{
 \donttest{
 library(TCGA2STAT)
 lusc.rnaseq2 <- getTCGA(disease="LUSC", data.type="RNASeq2")
-lusc.rnaseq2.bytype <- SampleSplit(lusc.rnaseq2)
+lusc.rnaseq2.bytype <- SampleSplit(lusc.rnaseq2$dat)
 }
 }

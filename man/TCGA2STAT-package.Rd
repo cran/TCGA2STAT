@@ -3,10 +3,10 @@
 \alias{TCGA2STAT-package}
 \docType{package}
 \title{
-A TCGA Data Widget for Statistical Analysis in R
+TCGA2STAT: TCGA to Statistical Analysis
 }
 \description{
-A R package to acquire and preprocess TCGA (genomics and clinical) data for statistical analyses.
+This widget automatically downloads and processes TCGA genomics and clinical data into a format convenient for statistical analyses in the R environment.
 }
 \details{
 \bold{}
@@ -26,7 +26,7 @@ Date: \tab 2015-06-12\cr
 License: \tab GPL-2\cr
 }
 This package contains a set of tools to obtain TCGA data as an object that can be seamlessly 
-integrated into statistical analysis pipelines in the R environment. The data obtained is being hosted and maintained by the Broad GDAC Firehose (http://gdac.broadinstitute.org/). 
+integrated into statistical analysis pipelines in the R environment. The data imported by this package is the version-stamped standardized data sets hosted and maintained by the Broad GDAC Firehose (http://gdac.broadinstitute.org/). 
 
 \bold{}
 
@@ -45,13 +45,16 @@ Maintainer: Ying-Wooi Wan<yingwoow@bcm.edu>
 \examples{
 	library(TCGA2STAT)
 	
-	#-- Default: get the expression, all clinical data, and expression merged with 
+	#-- Default: Get only the omics-profiles, for example RNA-SeqV2
+	\donttest{ACC.ov <- getTCGA(disease="ACC", data.type="RNASeq2")}
+	\donttest{str(ACC.ov)}
+
+	#-- Get the RNA-SeqV2, all clinical data, and expression merged with 
 	#   overall-survival for tumor samples
-	\donttest{data <- getTCGA(disease="ACC", data.type="RNASeq2")}
-	
-	#-- Get only the expression matrix
-	\donttest{data <- getTCGA(disease="ACC", data.type="RNASeq", type="RPKM", clinical=FALSE)}
+	\donttest{ACC.ov.os <- getTCGA(disease = "ACC", data.type = "RNASeq2", clinical=TRUE)}
 
 	#-- Get expression and merged with specific clinical covariate 
-	\donttest{data <- getTCGA(disease="OV", data.type="RNASeq", type="RPKM", cvars="ethnicity")}
-	}
+	\donttest{ACC.ov.eth <- getTCGA(disease = "ACC", data.type = "RNASeq2", clinical=TRUE, 
+	                        cvars="ethnicity")}
+	\donttest{head(ACC.ov.eth$merged.dat[,1:5])}
+}

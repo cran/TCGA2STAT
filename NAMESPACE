@@ -1,2 +1,2 @@
 #exportPattern("^[[:alpha:]]+")
-export(getTCGA, GeneMerge, TumorNormalMatch, SampleSplit)
+export(getTCGA, OMICSBind, TumorNormalMatch, SampleSplit)
